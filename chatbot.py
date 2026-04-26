@@ -12,7 +12,8 @@ st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
 # 2. Key Configuration
-genai.configure(api_key="AIzaSyDwvTL1Fy3fKAwYnduGNbEBY08163kvK9g")
+# Look for the secret instead of a hardcoded string
+genai.configure(api_key=st.secrets["AIzaSyAbKHuJR0StZ2VEZUAd2s_nP7-6HjWQSKs"])
 
 # In 2026, use the updated free-tier names:
 try:
