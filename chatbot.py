@@ -19,11 +19,14 @@ import google.generativeai as genai
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # In 2026, this logic ensures you always stay on the free tier
+# In 2026, use the updated free-tier names:
+
 try:
-    # Try the newest stable Flash model first (Highest free quota)
-    model = genai.GenerativeModel('gemini-3-flash')
-except Exception:
-    # Fallback to the universal stable model if 1.5 is busy
+
+    model = genai.GenerativeModel('gemini-2.5-flash')
+
+except:
+
     model = genai.GenerativeModel('gemini-pro')
     
 # 3. Sidebar Topics (Educational Branches)
