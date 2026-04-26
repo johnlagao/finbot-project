@@ -20,14 +20,10 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # In 2026, this logic ensures you always stay on the free tier
 # In 2026, use the updated free-tier names:
-
 try:
-
-    model = genai.GenerativeModel('gemini-2.5-flash')
-
-except:
-
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-3-flash-preview')
+except Exception:
+    model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
     
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
