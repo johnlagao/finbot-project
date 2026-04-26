@@ -11,13 +11,12 @@ st.sidebar.header("📋 Project Info")
 st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
-# 2. Key Configuration
-# Look for the secret instead of a hardcoded string
+# Configure the API using your Secret
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# In 2026, use the updated free-tier names:
+# Use the stable production model name
+# This version avoids the 404 error and has higher limits
 model = genai.GenerativeModel('gemini-1.5-flash')
-
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
     "Budgeting": "Learn the 50/30/20 Rule and how to track expenses.",
