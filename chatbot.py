@@ -14,9 +14,16 @@ st.sidebar.write("- John Lagao  ")
 # 1. Setup the API Key from Secrets
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# 2. Use 'gemini-pro' (This is the most stable name for the production API)
-model = genai.GenerativeModel('gemini-pro')
+# In 2026, use the updated free-tier names:
 
+try:
+
+    model = genai.GenerativeModel('gemini-2.5-flash')
+
+except:
+
+    model = genai.GenerativeModel('gemini-pro')
+    
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
     "Budgeting": "Learn the 50/30/20 Rule and how to track expenses.",
