@@ -11,12 +11,12 @@ st.sidebar.header("📋 Project Info")
 st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
-# Configure the API using your Secret
+# 1. Setup the API Key from Secrets
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# Use the stable production model name
-# This version avoids the 404 error and has higher limits
-model = genai.GenerativeModel('gemini-1.5-flash')
+# 2. Use 'gemini-pro' (This is the most stable name for the production API)
+model = genai.GenerativeModel('gemini-pro')
+
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
     "Budgeting": "Learn the 50/30/20 Rule and how to track expenses.",
