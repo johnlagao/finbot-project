@@ -12,15 +12,13 @@ st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
 # 2. Key Configuration
-# Note: Using 'gemini-1.5-flash' as it is the most stable version for 2026 free API keys
 genai.configure(api_key="AIzaSyB8ypHUuFP2WlidMDalK7nc3t5Xb_NkVJs")
 
-# Define the AI personality (System Instruction)
-instruction = "You are FinBot, a friendly financial advisor. Use simple, jargon-free English. Keep responses concise."
-model = genai.GenerativeModel(
-    model_name='gemini-1.5-flash',
-    system_instruction=instruction
-)
+# In 2026, use the updated free-tier names:
+try:
+    model = genai.GenerativeModel('gemini-2.5-flash')
+except:
+    model = genai.GenerativeModel('gemini-3-flash')
 
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
