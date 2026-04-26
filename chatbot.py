@@ -21,7 +21,7 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 # In 2026, this logic ensures you always stay on the free tier
 try:
     # Try the newest stable Flash model first (Highest free quota)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-3-flash')
 except Exception:
     # Fallback to the universal stable model if 1.5 is busy
     model = genai.GenerativeModel('gemini-pro')
