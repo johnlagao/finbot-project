@@ -16,10 +16,7 @@ st.sidebar.write("- John Lagao  ")
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # In 2026, use the updated free-tier names:
-try:
-    model = genai.GenerativeModel('gemini-2.5-flash')
-except:
-    model = genai.GenerativeModel('gemini-3-flash')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
