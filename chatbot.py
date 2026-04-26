@@ -12,7 +12,7 @@ st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
 # 2. Key Configuration
-genai.configure(api_key="AIzaSyB8ypHUuFP2WlidMDalK7nc3t5Xb_NkVJs")
+genai.configure(api_key="AIzaSyDwvTL1Fy3fKAwYnduGNbEBY08163kvK9g")
 
 # In 2026, use the updated free-tier names:
 try:
