@@ -18,11 +18,11 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 try:
 
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    model = genai.GenerativeModel('gemini-pro')
 
 except:
 
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
