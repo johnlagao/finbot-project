@@ -11,18 +11,20 @@ st.sidebar.header("📋 Project Info")
 st.sidebar.write("**Team Members:**")
 st.sidebar.write("- John Lagao  ")
 
-# 1. Setup the API Key from Secrets
+# In 2026, use the updated free-tier names:
+import streamlit as st
+import google.generativeai as genai
+
+# Securely load your key from Streamlit Secrets
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# In 2026, use the updated free-tier names:
-
+# In 2026, this logic ensures you always stay on the free tier
 try:
-
+    # Try the newest stable Flash model first (Highest free quota)
+    model = genai.GenerativeModel('gemini-1.5-flash')
+except Exception:
+    # Fallback to the universal stable model if 1.5 is busy
     model = genai.GenerativeModel('gemini-pro')
-
-except:
-
-    model = genai.GenerativeModel('gemini-2.5-flash')
     
 # 3. Sidebar Topics (Educational Branches)
 FINANCIAL_TOPICS = {
