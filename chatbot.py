@@ -13,7 +13,7 @@ st.sidebar.write("- John Lagao  ")
 
 # 2. Key Configuration
 # Look for the secret instead of a hardcoded string
-genai.configure(api_key=st.secrets["AIzaSyAbKHuJR0StZ2VEZUAd2s_nP7-6HjWQSKs"])
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # In 2026, use the updated free-tier names:
 try:
